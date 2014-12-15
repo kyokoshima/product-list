@@ -1,0 +1,30 @@
+table {
+	table-layout: fixed;
+}
+table th, table td {
+	white-space: nowrap;
+}
+table th {
+	text-align: center;
+}
+table th > div,
+table td > div {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.col_id { width: 3%;}
+.col_code { width: 5%;}
+.col_name { width: 15%;}
+.col_volume { width: 8%;}
+.col_notice { width: 10%;}
+.col_thumbnail { width: 8%;}
+.col_description { width: 15%;}
+.col_price { width: 8%;}
+.col_stock { width: 8%;}
+.col_category { width: 10%;}
+td.col_volume,
+td.col_price,
+td.col_stock,
+td.col_thumbnail {
+	text-align: right;
+}
