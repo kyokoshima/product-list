@@ -3,6 +3,7 @@
 <div class="row">
 	{{ Form::open(array('class' => 'form-inline')) }}
 	{{ Form::close() }}
+	{{ var_dump($categories) }}
 </div>
 <div class="product-list">
 	<div class="list-group">
