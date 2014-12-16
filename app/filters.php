@@ -88,3 +88,17 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+Route::filter('auth.basic.plain', function(){
+	$dialog_msg = 'Input ID/Pass';
+	if (!isset($_SERVER['PHP_AUTH_USER']) or !isset($_SERVER['PHP_AUTH_PW'])){
+		return Response::make($dialog_msg, 401, 
+			array('WWW-Authenticate' => 'Basic realm="my site"'));
+	};
+
+	if($_SERVER['PHP_AUTH_USER'] != 'admin' and $_SERVER['PHP_AUTH_PW'] != '7941') {
+		return Response::make($dialog_msg, 401, 
+			array('WWW-Authenticate' => 'Basic realm="my site"'));
+	}
+
+});

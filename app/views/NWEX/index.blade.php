@@ -1,87 +1,97 @@
-@extends('layout')
-@section('css')
-{{ HTML::style('css/product.css') }}
-@stop
+@extends('layouts.master')
 @section('content')
-@if (Session::has('errorMessages'))
-<div class="row">
-	<div class="alert alert-danger" role="alert">
-	<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
-		<span class="sr-only">Close</span>
-	</button>
-		<a href="#" class="alert-link">
-			<ul>
-				@foreach(Session::get('errorMessages') as $msg)
-				<li>{{ $msg }}</li>
-				@endforeach
-			</ul>
-		</a>
-	</div>
-</div>
-@elseif (Session::has('success'))
-<div class="row">
-	<div class="alert alert-success" role="alert">
-		<button type="button" class="close" data-dismiss="alert">
-			<span aria-hidden="true">&times;</span>
-			<span class="sr-only">Close</span>
-		</button>
-		{{ Session::get('success') }}
-	</div>
-</div>
-@endif
-<div class="row">
-	<div class="panel panel-default">
-		<div class="panel-heading">CSVアップロード</div>
-		<div class="panel-body">
-			{{ Form::open(array('url' => 'NWEX/upload', 'class' => 'form-inline', 'files' => true))	}}
-			<div class="form-group">
-				{{ Form::file('csv') }}
+{{ count($products) }}
+		<div class="product-list">
+			<div class="row">
+				<div class="col-xs-3">
+					<img src="http://www.projectk.co.jp/nw/item/1835n.jpg" alt="">
+				</div>
+				<div class="col-xs-7">
+					<h3 class="product-name">マキシモルソリューションズ500ml</h3>
+					<p class="price">&yen;3,080</p>
+				</div>
+				<div class="col-xs-2">
+					<button class="btn btn-primary">
+						<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+					</button>
+				</div>
 			</div>
-			{{ Form::submit('送信', array('class' => 'btn btn-primary'))}}
-			{{ Form::close() }}
+			<div class="row">
+				<div class="col-xs-3">
+					<img src="http://www.projectk.co.jp/nw/item/1842.jpg" alt="">
+				</div>
+				<div class="col-xs-8">
+					<p>ハワイアンノニジュース1000ml</p>
+				</div>
+				<div class="col-xs-1">
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3">
+					<img src="http://www.projectk.co.jp/nw/item/1870.jpg" alt="">
+				</div>
+				<div class="col-xs-8">
+					<p>ドリアントロピカルブレンド1000ml</p>
+				</div>
+				<div class="col-xs-1">
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3">
+					<img src="http://www.projectk.co.jp/nw/item/1869.jpg" alt="">
+				</div>
+				<div class="col-xs-8">
+					<p>ニューベラ1000ml</p>
+				</div>
+				<div class="col-xs-1">
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3">
+					<img src="http://www.projectk.co.jp/nw/item/1956.jpg" alt="">
+				</div>
+				<div class="col-xs-8">
+					<p>ビューティーネクター90mlx12</p>
+				</div>
+				<div class="col-xs-1">
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3">
+					<img src="http://www.projectk.co.jp/nw/item/4525.jpg" alt="">
+				</div>
+				<div class="col-xs-8">
+					<p>アサイアクション90mlx12	</p>
+				</div>
+				<div class="col-xs-1">
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3">
+					<img src="http://www.projectk.co.jp/nw/item/1885.jpg" alt="">
+				</div>
+				<div class="col-xs-8">
+					<p>NWプロポリスプレミアムセレクト30ml</p>
+				</div>
+				<div class="col-xs-1">
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-3">
+					<img src="http://www.projectk.co.jp/nw/item/1700.jpg" alt="">
+				</div>
+				<div class="col-xs-8">
+					<p>リベノール60粒	</p>
+				</div>
+				<div class="col-xs-1">
+					
+				</div>
+			</div>
 		</div>
-	</div>
-</div>
-<div class="row">
-<table class="table table-bordered">
-<thead>
-	<tr>
-	<th class="col_id">#</th>
-	<th class="col_code">コード</th>
-	<th class="col_name">名前</th>
-	<th class="col_volume">容量</th>
-	<th class="col_notice">注記</th>
-	<th class="col_thumbnail">サムネイル</th>
-	<th class="col_description">説明</th>
-	<th class="col_price">価格</th>
-	<th class="col_stock">在庫</th>
-	<th class="col_category">カテゴリ</th>
-	</tr>
-	
-</thead>
-<tbody>
-@foreach($products as $product)
-@if (!empty($updated) and in_array($product->code, $updated))
-	<tr class="success">
-@else
-	<tr>
-@endif
-		<td class="col_id">{{ $product->id }}</td>
-		<td class="col_code">{{ $product->code }}</td>
-		<td class="col_name"><div title="{{ $product->name }}">{{ $product->name }}</div></td>
-		<td class="col_volume">{{ $product->volume }}</td>
-		<td class="col_notice"><div>{{ $product->notice }}</div></td>
-		<td class="col_thumbnail"><div>{{ $product->image_s }}</div></td>
-		<td class="col_description">
-			<div title="{{ $product->description }}">{{ $product->description }}</div>
-		</td>
-		<td class="col_price">{{ $product->price }}</td>
-		<td class="col_stock">{{ $product->stock }}</td>
-		<td class="col_category"><div>{{ $product->category->name_ja }}</div></td>
-		
-	</tr>
-@endforeach
-</tbody>
-</table>
-</div>
 @stop

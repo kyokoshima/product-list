@@ -16,4 +16,12 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::controller('NWEX', 'NWEXController');
+Route::group(['prefix' => 'admin/NWEX', 'before' => 'auth.basic.plain'], function(){
+	Route::get('/', 'admin\NWEXController@index');
+	Route::post('upload', 'admin\NWEXController@upload');
+});
+
+Route::group(['prefix' => 'NWEX'], function(){
+	Route::resource('/', 'NWEX\ProductController');
+});
+// Route::controller('admin/NWEX', 'Admin\NWEXController');

@@ -1,0 +1,34 @@
+.navbar-brand {
+	background: url('../img/logo.png') no-repeat;
+	height: 50px;
+	width: 100px;
+}
+
+.nav {
+	margin-top: 6px;
+}
+
+.product-list .row {
+	border-bottom: 1px solid #ddd;
+	height: 80px;
+}
+
+.product-list .row img {
+	width: 100%;
+}
+
+.product-name {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0;
+}
+
+.price {
+	color: #fd2e00;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-7, .col-xs-8  {
+	padding-left: 0;
+}

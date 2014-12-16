@@ -1,15 +1,21 @@
 <?php
-class NWEXController extends BaseController {
+namespace Admin;
+use \View;
+use \Product;
+use \Input;
+use \Session;
+class NWEXController extends \BaseController {
 
-	public function getIndex(){
+	protected $layout = 'layouts/admin';
+	public function index(){
 		$products = Product::all();
-		return View::make('NWEX.index')->with('products', $products);
+		return View::make('admin.NWEX.index')->with('products', $products);
 		// $this->layout->content = View::make('NWEX.index', compact($products));
 		// return View::
 		// $this->layout->with('products', $products);
 	}
 
-	public function postUpload() {
+	public function upload() {
 		$errorMessages = null;
 		$updated = array();
 		if (Input::hasFile('csv')) {
@@ -64,7 +70,7 @@ class NWEXController extends BaseController {
 			Session::flush();
 		}
 		$products = Product::all();
-		return View::make('NWEX.index')
+		return View::make('admin.NWEX.index')
 				->with('products', $products)
 				->with('updated', $updated);
 		// return $result->with('updated', $updated);
