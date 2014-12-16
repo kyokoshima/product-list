@@ -10,20 +10,31 @@
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="navbar-header">
 				<a href="/" class="navbar-brand">
 				</a>
-				<ul class="nav nav-pills pull-right">
-					<li><a href="#">カテゴリ</a></li>
-				</ul>
 			</div>
 		</div>
 	</nav>
-	<div class="container">
+	<div class="container-fluid">
 		@yield('content')
 	</div>
 
+  <footer>
+  	<div class="container">
+	    <ul class="list-inline">
+	      <li>特定商取引法に基づく表示</li>
+	    </ul>
+    </div>
+  </footer>
+	{{-- 
+	<ul id="page-top" class="nav nav-tabs">
+		<li class="active">
+			<a href="#">TOPへ</a>
+		</li>
+	</ul>
+	--}}
 	{{ HTML::script('js/jquery-1.11.1.min.js') }}
   {{ HTML::script('js/bootstrap.min.js') }}
 </body>

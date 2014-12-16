@@ -1,6 +1,32 @@
 @extends('layouts.master')
 @section('content')
-{{ count($products) }}
+<div class="row">
+	{{ Form::open(array('class' => 'form-inline')) }}
+	{{ Form::close() }}
+</div>
+<div class="product-list">
+	<div class="list-group">
+	@foreach($products as $product)
+		<div class="list-group-item">
+			<div class="thumb">
+				<img src="http://www.projectk.co.jp/nw/item/{{ $product->image_s }}" alt="" />
+			</div>
+			<div class="explain">
+				<h3 class="product-name">{{ $product->name }}{{ $product->volume }}</h3>
+				<p class="text-danger">{{ $product->notice }}</p>
+				<p class="price">&yen;{{ $product->price }}</p>
+				<input type="number" value="{{ $product->stock }}" />
+				<button class="btn btn-danger">
+					<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+				</button>
+			</div>
+		</div>
+	@endforeach
+	</div>
+</div>
+
+<!-- {{ count($products) }} -->
+{{-- 
 		<div class="product-list">
 			<div class="row">
 				<div class="col-xs-3">
@@ -94,4 +120,5 @@
 				</div>
 			</div>
 		</div>
+		--}}
 @stop
