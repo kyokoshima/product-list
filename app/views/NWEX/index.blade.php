@@ -41,10 +41,19 @@
 					<div class="cart-panel">
 						@if ($product->stock > 0)
 						<input type="number" value="{{ $product->stock }}" class="stock" />
-						<button class="btn btn-danger">
+						<button class="btn btn-danger add-cart">
 							<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 						</button>
 						@endif
+						<form action="http://www.projectk.co.jp/nw/cart/" method="post" style="display: none;" accept-charset="Shift_JIS">
+							<input type="hidden" name="product_code" value="{{$product->code}}">
+							<input type="hidden" name="product_name" value="{{ $product->name }}">
+							<input type="hidden" name="price" value="{{$product->price}}">
+							<input type="hidden" name="shipping_weight" value="1">
+							<input type="hidden" name="cash_on_delivery" value="0">
+							<input type="hidden" name="step" value="addCart">
+							<input type="hidden" name="qty" value="1">
+						</form>
 					</div>
 				</div>
 			</div>

@@ -29,3 +29,5 @@ Route::group(['prefix' => 'NWEX'], function(){
 	});
 });
 
+Route::get('cart/', 'CartController@index');
+
