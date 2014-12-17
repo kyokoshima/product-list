@@ -11,6 +11,8 @@ class ProductController extends BaseController {
 		// }
 		$categories = Category::getOptions();
 		$products = Product::orderBy('code', 'desc')->take(10)->get();
-		return View::make('NWEX.index')->with(array('products'=> $products, 'categories' => $categories));
+		return View::make('NWEX.index')
+			->with(array('products'=> $products, 'categories' => $categories
+				'selectedCategory' => 0));
 	}
 }
