@@ -78,23 +78,44 @@
 	width: 100%;
 }
 
-.product-name {
-	font-size: 14px;
-	font-weight: bold;
-	margin: 0;
+.price-panel {
+	position: relative;
+	height: 50px;
 }
 
-.price {
+.price-panel > * {
+	position: absolute;
+	bottom: 0;
+}
+
+.price-panel > .price {
 	color: #fd2e00;
 	font-size: 17px;
 	font-weight: bold;
+	float: left;
 }
 
+.price-panel > .cart-panel {
+	right: 20px;
+	top: 20px;
+}
+
+.price-panel>.cart-panel>.stock {
+	/*margin-top: 10px;*/
+	width: 60px;
+}
+
+.thumb-wrapper {
+	/*height: 100px;*/
+	width: 100px;
+	overflow: hidden;
+	float: left;
+}
 
 .thumb {
 	height: 100px;
 	width: 100px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	float: left;
 	text-align: center;
 }
@@ -103,15 +124,36 @@
 	max-height: 100%;
 	max-width: 100%;
 	min-height: 100%;
-	min-width: 100$;
+	min-width: 100%;
 }
 
 .explain {
+	float: left;
+	width: 60%;
+}
+
+.explain p {
+	margin: 0;
+}
+
+/*.explain h3 {
+	font-size: 14px;
+}
+*/
+.explain .product-name {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.explain .stock {
 
 }
 
-.explain h3 {
-	font-size: 14px;
+.explain .product-description {
+	font-size: 12px;
 }
 
 .container-fluid {
@@ -135,6 +177,9 @@
 	}*/
 	.container-fluid>.navbar-header {
 		padding-left: 15px;		
+		margin: 0;
+	}
+	.container-fluid>.row {
 		margin: 0;
 	}
 	.list-group-item {
