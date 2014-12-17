@@ -8,10 +8,14 @@ class CategoryController extends BaseController {
 	function show($id){
 		$categories = Category::getOptions();
 		$products = Product::where('category_id', $id)->get();
+		$selectedCategory = $id;
+		if(empty($products)) {
+			$selectedCategory = 0;
+		}
 		return View::make('NWEX.index')
 			->with(
 					array('products' => $products, 
 							'categories' => $categories,
-							'selectedCategory' => $id));
+							'selectedCategory' => $selectedCategory));
 	}
 }

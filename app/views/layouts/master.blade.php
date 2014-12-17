@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-	<title>Document</title>
+	<title>@yield('title') - NWEX</title>
 	{{ HTML::style('css/bootstrap.min.css') }}
 	{{ HTML::style('css/sp.css') }}
 </head>
@@ -23,9 +23,12 @@
 
   <footer>
   	<div class="container">
-	    <ul class="list-inline">
-	      <li>特定商取引法に基づく表示</li>
-	    </ul>
+  		<div class="center-block">
+		    <ul class="list-inline">
+		    	<li>{{ link_to('NWEX', 'TOP') }}</li>
+		      <li>{{ link_to('NWEX/legal', "特定商取引法に基づく表示") }}</li>
+		    </ul>
+	    </div>
     </div>
   </footer>
 	{{-- 

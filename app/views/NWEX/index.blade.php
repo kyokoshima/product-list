@@ -1,15 +1,20 @@
 @extends('layouts.master')
+@section('title')
+
+@stop
 @section('content')
 <div class="row">
-	<div class="col-xs-3 col-xs-offset-3">
-		{{ Form::open(array(
-				'action' => array('NWEX\CategoryController@show', 0), 
-				'class' => 'form-inline', 'method' => 'get')) 
-		}}
-			<div class="form-group">
-			{{ Form::select('category', $categories, $selectedCategory, array('id' => 'select-category')) }}
-			</div>
-		{{ Form::close() }}
+	<div class="col-xs-12">
+		<div class="center-block">
+			{{ Form::open(array(
+					'action' => array('NWEX\CategoryController@show', 0), 
+					'class' => 'form-inline', 'method' => 'get')) 
+			}}
+				<div class="form-group">
+				{{ Form::select('category', $categories, $selectedCategory, array('id' => 'select-category')) }}
+				</div>
+			{{ Form::close() }}
+		</div>
 	</div>
 </div>
 <div class="product-list">
