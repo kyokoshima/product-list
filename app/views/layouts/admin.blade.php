@@ -19,6 +19,16 @@
     @yield('css')
   </head>
   <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <p class="navbar-text navbar-right">
+            {{ link_to('admin/NWEX/information', 'お知らせ編集', array('class' => 'navbar-link')) }}
+            {{ link_to('admin/NWEX/', '商品編集', array('class' => 'navbar-link')) }}
+          </p>
+        </div>
+      </div>
+    </nav>
     <p id="page-top"><a href="#">TOPへ</a></p>
     <div class="container">
       @yield('content')

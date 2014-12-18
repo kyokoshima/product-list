@@ -1,14 +1,14 @@
 <?php
-namespace Admin;
+namespace Admin\NWEX;
 use \View;
 use \Product;
 use \Input;
 use \Session;
-class NWEXController extends \BaseController {
+class ProductController extends \BaseController {
 
 	protected $layout = 'layouts/admin';
 	public function index(){
-		$products = Product::all();
+		$products = Product::with('category')->get();
 		return View::make('admin.NWEX.index')->with('products', $products);
 		// $this->layout->content = View::make('NWEX.index', compact($products));
 		// return View::

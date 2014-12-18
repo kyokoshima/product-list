@@ -1,16 +1,16 @@
 @extends('layouts.master')
 @section('title')
-TOP
+{{ $categories[$selectedCategory]}}
 @stop
 @section('content')
 <div class="row">
 	<div class="col-xs-12">
 		<ol class="breadcrumb">
-			<li>TOP</li>
+			<li>{{ link_to('NWEX/', 'TOP') }}</li>
+			<li class="active">{{ $categories[$selectedCategory]}}</li>
 		</ol>
 	</div>
 </div>
-<!-- @include('NWEX.partials.information') -->
 <div class="row">
 	<div class="col-xs-12">
 		<div class="btn-group btn-category">		
@@ -30,12 +30,7 @@ TOP
 		</div>
 	</div>
 </div>
-<div class="panel panel-success">
-<div class="panel-heading">
-	<div class="panel-title">おすすめ商品</div>
-</div>
 @include('NWEX.partials.productList')
-</div>
 @stop
 @section('scripts')
 {{ HTML::script('js/nwex.js') }}

@@ -33,7 +33,7 @@
 	<div class="panel panel-default">
 		<div class="panel-heading">CSVアップロード</div>
 		<div class="panel-body">
-			{{ Form::open(array('action' => 'admin\NWEXController@upload', 'class' => 'form-inline', 'files' => true))	}}
+			{{ Form::open(array('action' => 'admin\NWEX\ProductController@upload', 'class' => 'form-inline', 'files' => true))	}}
 			<div class="form-group">
 				{{ Form::file('csv') }}
 			</div>

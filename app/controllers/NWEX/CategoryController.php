@@ -12,7 +12,7 @@ class CategoryController extends BaseController {
 		if(empty($products)) {
 			$selectedCategory = 0;
 		}
-		return View::make('NWEX.index')
+		return View::make('NWEX.category')
 			->with(
 					array('products' => $products, 
 							'categories' => $categories,

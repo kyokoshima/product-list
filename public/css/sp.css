@@ -187,6 +187,18 @@
 	margin-bottom: 0;
 }
 
+.navbar {
+	margin-bottom: 0;
+}
+
+.information {
+	margin: 10px 15px;
+}
+
+.btn-category .btn {
+	border-radius: 0;
+}
+
 @media only screen and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
 /*	.navbar > .container-fluid {
 		padding-left: 15px;
