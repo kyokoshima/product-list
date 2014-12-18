@@ -6,8 +6,8 @@ $(function(){
 		f.attr('action', action);
 		f.submit();
 	});
-	$('.add-cart').on('click', function(){
-		// console.log($(this));
-		$(this).siblings('form').submit();
-	});
+	// $('.add-cart').on('click', function(){
+	// 	// console.log($(this));
+	// 	$(this).siblings('form').submit();
+	// });
 });

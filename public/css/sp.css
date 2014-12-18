@@ -129,7 +129,8 @@
 
 .explain {
 	float: left;
-	width: 60%;
+	width: 65%;
+	padding-left: 5px;
 }
 
 .explain p {
@@ -160,6 +161,10 @@
 	padding: 0;
 }
 
+.container-fluid>.navbar-header {
+	padding-left: 15px;
+}
+
 #page-top {
 	position: fixed;
 	bottom: 20px;
@@ -171,16 +176,24 @@
 	text-decoration: none;
 }
 
+.dropdown-block {
+	width: 100%;
+}
+.btn-category {
+	display: block;
+}
+
+.breadcrumb {
+	margin-bottom: 0;
+}
+
 @media only screen and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
 /*	.navbar > .container-fluid {
 		padding-left: 15px;
 	}*/
-	.container-fluid>.navbar-header {
-		padding-left: 15px;		
-		margin: 0;
-	}
+
 	.container-fluid>.row {
-		margin: 0;
+		/*margin: 0;*/
 	}
 	.list-group-item {
 		min-height: 120px;
