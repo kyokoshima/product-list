@@ -208,6 +208,21 @@
 	padding: 0;
 }
 
+.panel {
+	margin: 0;
+}
+
+.panel > .panel-heading {
+	padding: 1px;
+}
+
+.panel .panel-body > p {
+	margin: 0;
+}
+.panel .panel-body > p .text-danger {
+	font-weight: bold;
+}
+
 @media only screen and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
 /*	.navbar > .container-fluid {
 		padding-left: 15px;

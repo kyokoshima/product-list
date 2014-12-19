@@ -10,7 +10,7 @@ TOP
 		</ol>
 	</div>
 </div>
-<!-- @include('NWEX.partials.information') -->
+@include('NWEX.partials.information')
 <div class="row">
 	<div class="col-xs-12">
 		<div class="btn-group btn-category">		
