@@ -63,6 +63,8 @@
 @foreach($products as $product)
 @if (!empty($updated) and in_array($product->code, $updated))
 	<tr class="success">
+@elseif (!empty($product->deleted_at))
+	<tr class="disabled">
 @else
 	<tr>
 @endif
@@ -78,7 +80,6 @@
 		<td class="col_price">{{ $product->price }}</td>
 		<td class="col_stock">{{ $product->stock }}</td>
 		<td class="col_category"><div>{{ $product->category->name_ja }}</div></td>
-		
 	</tr>
 @endforeach
 </tbody>

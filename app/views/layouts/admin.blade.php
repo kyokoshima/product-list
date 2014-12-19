@@ -15,18 +15,23 @@
       <script src={{ URL::to('js/html5shiv.min.js') }}></script>
       <script src={{ URL::to('js/respond.min.js') }}></script>
     <![endif]-->
-    {{ HTML::style('css/app.css') }}
+    {{ HTML::style('css/admin.css') }}
     @yield('css')
   </head>
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <p class="navbar-text navbar-right">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            {{ link_to('admin/NWEX/recommend', 'おすすめ編集', array('class' => 'navbar-link')) }}
+          </li>
+          <li>
             {{ link_to('admin/NWEX/information', 'お知らせ編集', array('class' => 'navbar-link')) }}
+          </li>
+          <li>
             {{ link_to('admin/NWEX/', '商品編集', array('class' => 'navbar-link')) }}
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
     </nav>
     <p id="page-top"><a href="#">TOPへ</a></p>

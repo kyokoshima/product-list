@@ -8,7 +8,7 @@ class ProductController extends \BaseController {
 
 	protected $layout = 'layouts/admin';
 	public function index(){
-		$products = Product::with('category')->get();
+		$products = Product::withTrashed()->with('category')->get();
 		return View::make('admin.NWEX.index')->with('products', $products);
 		// $this->layout->content = View::make('NWEX.index', compact($products));
 		// return View::

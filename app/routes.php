@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin/NWEX', 'before' => 'auth.basic.plain'], functio
 	Route::get('/', 'admin\NWEX\ProductController@index');
 	Route::post('upload', 'admin\NWEX\ProductController@upload');
 	Route::resource('information', 'admin\NWEX\InformationController');
+	Route::resource('recommend', 'admin\NWEX\RecommendController');
 	
 });
 
@@ -32,4 +33,13 @@ Route::group(['prefix' => 'NWEX'], function(){
 });
 
 Route::get('cart/', 'CartController@index');
+
+View::composer('admin.NWEX.recommend', function($view){
+	$view
+		->with('recommends', Recommend::with('Product')->get())
+		->with('products', Product::whereNotExists(function($query){
+			$query->select(
+				DB::raw(1))->from('recommends')->whereRaw('products.id = recommends.id');
+		})->get());
+});
 

@@ -161,8 +161,13 @@
 	padding: 0;
 }
 
+.container-fluid>.row {
+	margin: 0;
+}
+
 .container-fluid>.navbar-header {
-	padding-left: 15px;
+	/*padding-left: 15px;*/
+	margin: 0;
 }
 
 #page-top {
@@ -199,14 +204,16 @@
 	border-radius: 0;
 }
 
+.row > .col-xs-12 {
+	padding: 0;
+}
+
 @media only screen and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
 /*	.navbar > .container-fluid {
 		padding-left: 15px;
 	}*/
 
-	.container-fluid>.row {
-		/*margin: 0;*/
-	}
+
 	.list-group-item {
 		min-height: 120px;
 		padding-left: 0;

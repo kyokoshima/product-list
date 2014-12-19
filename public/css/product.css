@@ -22,9 +22,14 @@ table td > div {
 .col_price { width: 8%;}
 .col_stock { width: 8%;}
 .col_category { width: 10%;}
+.col_deleted {}
 td.col_volume,
 td.col_price,
 td.col_stock,
 td.col_thumbnail {
 	text-align: right;
+}
+
+.table>tbody>tr.disabled>td {
+	background-color: #eee;
 }

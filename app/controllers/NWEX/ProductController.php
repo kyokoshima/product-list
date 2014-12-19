@@ -10,7 +10,9 @@ class ProductController extends BaseController {
 		// 	$categories[$category->id] = $category->name_ja;
 		// }
 		$categories = Category::getOptions();
-		$products = Product::orderBy('stock', 'desc')->take(20)->get();
+		// $products = Product::orderBy('stock', 'desc')->take(20)->get();
+		$products = Product::leftJoin('recommends', 'products.id', '=', 'recommends.product_id')
+				->orderBy('recommends.order', 'asc')->take(20)->get();
 		return View::make('NWEX.index')
 			->with(array('products'=> $products, 'categories' => $categories,
 				'selectedCategory' => 0));

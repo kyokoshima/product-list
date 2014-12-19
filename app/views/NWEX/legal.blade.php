@@ -1,6 +1,14 @@
 @extends('layouts.master')
 @section('title', '特定商取引法に基づく表示')
 @section('content')
+<div class="row">
+	<div class="col-xs-12">
+		<ol class="breadcrumb">
+			<li>{{ link_to('NWEX/', 'TOP') }}</li>
+			<li class="active">特定商取引法に基づく表示</li>
+		</ol>
+	</div>
+</div>
 <div class="container">
 <dl>
 	<dt>店舗名</dt>

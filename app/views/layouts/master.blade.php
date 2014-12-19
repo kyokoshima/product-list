@@ -22,8 +22,7 @@
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="/" class="navbar-brand">
-				</a>
+				{{ link_to('NWEX', '', array('class' => 'navbar-brand')) }}
 			</div>
 		</div>
 	</nav>
@@ -33,12 +32,10 @@
 
   <footer>
   	<div class="container">
-  		<div class="center-block">
-		    <ul class="list-inline">
-		    	<li>{{ link_to('NWEX', 'TOP') }}</li>
-		      <li>{{ link_to('NWEX/legal', "特定商取引法に基づく表示") }}</li>
-		    </ul>
-	    </div>
+	    <ul class="nav nav-tabs nav-justified">
+	    	<li>{{ link_to('NWEX', 'TOP') }}</li>
+	      <li>{{ link_to('NWEX/legal', "特定商取引法に基づく表示") }}</li>
+	    </ul>
     </div>
   </footer>
 	{{-- 
