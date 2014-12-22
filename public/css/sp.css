@@ -65,6 +65,7 @@
 	height: 50px;
 	width: 120px;
 	background-size: cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='背景画像のパス',sizingMethod='scale');
 }
 
 .nav {
