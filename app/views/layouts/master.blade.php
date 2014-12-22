@@ -54,7 +54,8 @@
     </div>
   </footer>
   <p id="page-top">
-		<a href="#">TOPへ</a>
+  	<span>TOPへ</a>
+		<!-- <a href="#">TOPへ</a> -->
 	</p>
 	{{ HTML::script('js/jquery-1.11.1.min.js') }}
   {{ HTML::script('js/bootstrap.min.js') }}
