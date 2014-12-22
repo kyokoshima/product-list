@@ -32,5 +32,4 @@ TOP
 </div>
 @stop
 @section('scripts')
-{{ HTML::script('js/nwex.js') }}
 @stop

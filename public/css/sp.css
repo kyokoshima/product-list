@@ -257,6 +257,14 @@
 	font-weight: bold;
 }
 
+.legal-wrapper {
+	margin: 15px;
+}
+
+.legal-wrapper dl {
+	border-bottom: 1px solid #ccc;
+}
+
 
 @media only screen and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
 /*	.navbar > .container-fluid {

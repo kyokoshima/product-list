@@ -27,5 +27,4 @@
 @include('NWEX.partials.productList')
 @stop
 @section('scripts')
-{{ HTML::script('js/nwex.js') }}
 @stop
