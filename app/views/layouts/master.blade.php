@@ -19,6 +19,7 @@
 	</script>
 </head>
 <body>
+
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -28,10 +29,10 @@
 				<li><a href="#" class="nav-info btn-top" title="お知らせ">
 					{{ HTML::image('img/info.png') }}
 				</a></li>
-				<li><a href="#" class="nav-delivery btn-top" title="配送規定">
+				<li><a href="{{ URL::to('NWEX/legal') }}" class="nav-delivery btn-top" title="配送規定">
 					{{ HTML::image('img/truck.png') }}
 				</a></li>
-				<li><a href="#" class="nav-pc btn-top" title="PC版">
+				<li><a href="http://www.projectk.co.jp/nw/sale.html" class="nav-pc btn-top" title="PC版">
 					{{ HTML::image('img/PC.png') }}
 				</a></li>
 				<li><a href="http://www.projectk.co.jp/nw/cart/?return=back" class="nav-cart btn-top" title="買い物かご">
@@ -52,13 +53,9 @@
 	    </ul>
     </div>
   </footer>
-	{{-- 
-	<ul id="page-top" class="nav nav-tabs">
-		<li class="active">
-			<a href="#">TOPへ</a>
-		</li>
-	</ul>
-	--}}
+  <p id="page-top">
+		<a href="#">TOPへ</a>
+	</p>
 	{{ HTML::script('js/jquery-1.11.1.min.js') }}
   {{ HTML::script('js/bootstrap.min.js') }}
   @yield('scripts')

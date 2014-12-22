@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row information-wrapper" style="display: {{ (isset($show) and $show) ? 'block' : 'none' }}">
 	<div class="col-xs-12">
 		<div class="panel panel-success">
 			<div class="panel-heading">

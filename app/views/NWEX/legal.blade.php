@@ -1,14 +1,7 @@
 @extends('layouts.master')
 @section('title', '特定商取引法に基づく表示')
 @section('content')
-<div class="row">
-	<div class="col-xs-12">
-		<ol class="breadcrumb">
-			<li>{{ link_to('NWEX/', 'TOP') }}</li>
-			<li class="active">特定商取引法に基づく表示</li>
-		</ol>
-	</div>
-</div>
+@include('NWEX.partials.breadcrumb', array('breadcrumbs' => array('特定商取引法に基づく表示')))
 <div class="container">
 <dl>
 	<dt>店舗名</dt>
@@ -37,10 +30,6 @@
 <dl>
 	<dt>販売方法</dt>
 	<dd>ホームページ注文・ＦＡＸ・電子メールでご注文を受付</dd>
-</dl>
-<dl>
-	<dt>配送方法</dt>
-	<dd>沖縄、離島以外原則佐川急便による配送</dd>
 </dl>
 <dl>
 	<dt>配送方法</dt>

@@ -3,14 +3,8 @@
 {{ $categories[$selectedCategory]}}
 @stop
 @section('content')
-<div class="row">
-	<div class="col-xs-12">
-		<ol class="breadcrumb">
-			<li>{{ link_to('NWEX/', 'TOP') }}</li>
-			<li class="active">{{ $categories[$selectedCategory]}}</li>
-		</ol>
-	</div>
-</div>
+@include('NWEX.partials.breadcrumb', array('breadcrumbs' => array($categories[$selectedCategory])))
+@include('NWEX.partials.information', array('show' => false))
 <div class="row">
 	<div class="col-xs-12">
 		<div class="btn-group btn-category">		

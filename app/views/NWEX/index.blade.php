@@ -3,14 +3,8 @@
 TOP
 @stop
 @section('content')
-<div class="row">
-	<div class="col-xs-12">
-		<ol class="breadcrumb">
-			<li>TOP</li>
-		</ol>
-	</div>
-</div>
-@include('NWEX.partials.information')
+@include('NWEX.partials.breadcrumb')
+@include('NWEX.partials.information', array('show' => true))
 <div class="row">
 	<div class="col-xs-12">
 		<div class="btn-group btn-category">		
