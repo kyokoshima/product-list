@@ -1,7 +1,8 @@
 /* override bootstrap */
 .navbar-default {
-	background-color: #b9da89;
-	border-color: #85c743;
+	/*background-color: #b9da89;*/
+	/*border-color: #85c743;*/
+	background-color: #fff;
 }
 .navbar-default .navbar-brand {
 	color: #ffffff;
@@ -60,9 +61,10 @@
 }
 
 .navbar-brand {
-	background: url('../img/logo.png') no-repeat;
+	background: url('../img/nwex_logo.png') no-repeat;
 	height: 50px;
-	width: 100px;
+	width: 120px;
+	background-size: cover;
 }
 
 .nav {
@@ -168,8 +170,27 @@
 .container-fluid>.navbar-header {
 	/*padding-left: 15px;*/
 	margin: 0;
+	float: left;
 }
 
+.nav-right-btn {
+	float: right;
+	margin: 0;
+}
+
+.nav-right-btn li {
+	float: left;
+}
+
+.nav-right-btn > li > .btn-top {
+	height: 50px;
+	width: 40px;
+	padding: 0;
+}
+
+.nav-right-btn > li > .btn-top > img{
+	max-height: 100%;
+}
 #page-top {
 	position: fixed;
 	bottom: 20px;
@@ -222,6 +243,7 @@
 .panel .panel-body > p .text-danger {
 	font-weight: bold;
 }
+
 
 @media only screen and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
 /*	.navbar > .container-fluid {

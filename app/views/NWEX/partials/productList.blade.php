@@ -28,6 +28,7 @@
 							<input type="hidden" name="price" value="{{$product->price}}">
 							<input type="hidden" name="shipping_weight" value="1">
 							<input type="hidden" name="cash_on_delivery" value="0">
+							<input type="hidden" name="return" value="back">
 							<input type="hidden" name="step" value="addCart">
 							@if ($product->stock > 0)
 								<!-- <input type="number" value="{{ $product->stock }}" class="stock" /> -->

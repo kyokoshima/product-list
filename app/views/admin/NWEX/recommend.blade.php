@@ -38,9 +38,13 @@
 		<tr><th>名称</th><th>順番</th></tr>
 		@foreach($recommends as $recommend)
 		<tr>
-		<td>{{ $recommend->product->name }}</td>
+		<td>{{ $recommend->product }}</td>
 		<td>
-			<input type="text" name="[{{ $recommend->id }}]" value="{{ $recommend->order }}">
+		{{--
+		
+			<input type="text" name="[{{ $recommend->id }}]" value="{{ $recommend->sort_order }}">
+		--}}
+		
 			</td>
 		</tr>
 		@endforeach

@@ -24,6 +24,20 @@
 			<div class="navbar-header">
 				{{ link_to('NWEX', '', array('class' => 'navbar-brand')) }}
 			</div>
+			<ul class="nav navbar-nav nav-right-btn">
+				<li><a href="#" class="nav-info btn-top" title="お知らせ">
+					{{ HTML::image('img/info.png') }}
+				</a></li>
+				<li><a href="#" class="nav-delivery btn-top" title="配送規定">
+					{{ HTML::image('img/truck.png') }}
+				</a></li>
+				<li><a href="#" class="nav-pc btn-top" title="PC版">
+					{{ HTML::image('img/PC.png') }}
+				</a></li>
+				<li><a href="http://www.projectk.co.jp/nw/cart/?return=back" class="nav-cart btn-top" title="買い物かご">
+					{{ HTML::image('img/cart.png') }}
+				</a></li>
+			</ul>
 		</div>
 	</nav>
 	<div class="container-fluid">
