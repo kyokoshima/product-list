@@ -79,7 +79,7 @@
 </dl>
 <dl>
 	<dt>QRコード</dt>
-	<dd style="text-align: center;">{{ HTML::image('img/QRCode.gif')}}</dd>
+	<dd style="text-align: center;">{{ HTML::image('img/QRcode.gif')}}</dd>
 </dl>
 </div>
 </div>
