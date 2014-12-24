@@ -43,3 +43,8 @@ View::composer('admin.NWEX.recommend', function($view){
 		})->get());
 });
 
+View::composer('admin.NWEX.index', function($view){
+	$products = Product::withTrashed()->with('category')->get();
+	$view
+		->with('products', $products);
+});

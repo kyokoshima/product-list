@@ -9,7 +9,8 @@ class ProductController extends \BaseController {
 	protected $layout = 'layouts/admin';
 	public function index(){
 		$products = Product::withTrashed()->with('category')->get();
-		return View::make('admin.NWEX.index')->with('products', $products);
+		// return View::make('admin.NWEX.index')->with('products', $products);
+		return View::make('admin.NWEX.index');
 		// $this->layout->content = View::make('NWEX.index', compact($products));
 		// return View::
 		// $this->layout->with('products', $products);
@@ -38,11 +39,12 @@ class ProductController extends \BaseController {
 							// var_dump (array((int)$price,(int)$product->price));
 							// var_dump ((int)$price != (int)$product->price);
 							$changed = false;
-							if (!empty($price) and ((int)$price != (int)$product->price)) {
+							if (isset($stock) and ((int)$price != (int)$product->price)) {
 								$product->price = $price;
 								$changed = true;
 							}
-							if (!empty($stock) and ((int)$stock != (int)$product->stock)) {
+
+							if (isset($stock) and ((int)$stock != (int)$product->stock)) {
 								$product->stock = $stock;
 								$changed = true;
 							}
@@ -69,9 +71,9 @@ class ProductController extends \BaseController {
 		} else {
 			Session::flush();
 		}
-		$products = Product::all();
+		// $products = Product::all();
 		return View::make('admin.NWEX.index')
-				->with('products', $products)
+				// ->with('products', $products)
 				->with('updated', $updated);
 		// return $result->with('updated', $updated);
 	}
