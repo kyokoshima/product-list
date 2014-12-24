@@ -2,6 +2,7 @@
 @section('title', '特定商取引法に基づく表示')
 @section('content')
 @include('NWEX.partials.breadcrumb', array('breadcrumbs' => array('特定商取引法に基づく表示')))
+@include('NWEX.partials.information', array('show' => false))
 <div class="container">
 <div class="row">
 	<div class="legal-wrapper">
@@ -58,6 +59,10 @@
 </dd>
 </dl>
 <dl>
+	<dt>消費税について</dt>
+	<dd>全ての商品は消費税8%を含む価格表示です</dd>
+</dl>
+<dl>
 	<dt>キャンセル</dt>
 	<dd>
 	<p>商品の品質については万全を期しておりますが、万一商品が破損・汚損していた場合、 又はご注文と異なる場合は、原則として商品到着後８日以内に、まず弊社へお電話にてお知らせ下さい。 不良品の場合、良品と交換（在庫のある場合）または返金させて頂きます。
@@ -71,6 +76,10 @@
 <dl>
 	<dt>古物商許可</dt>
 	<dd>神奈川県公安委員会　第451360010398号</dd>
+</dl>
+<dl>
+	<dt>QRコード</dt>
+	<dd style="text-align: center;">{{ HTML::image('img/QRCode.gif')}}</dd>
 </dl>
 </div>
 </div>

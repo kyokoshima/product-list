@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin/NWEX', 'before' => 'auth.basic.plain'], functio
 	Route::get('/', 'admin\NWEX\ProductController@index');
 	Route::post('upload', 'admin\NWEX\ProductController@upload');
 	Route::resource('information', 'admin\NWEX\InformationController');
+	Route::post('information', ['before' => 'csrf', 'uses' => 'admin\NWEX\InformationController@store']);
 	Route::resource('recommend', 'admin\NWEX\RecommendController');
 	
 });
@@ -47,4 +48,9 @@ View::composer('admin.NWEX.index', function($view){
 	$products = Product::withTrashed()->with('category')->get();
 	$view
 		->with('products', $products);
+});
+
+View::composer('admin.NWEX.information', function($view){
+	$information = Information::all();
+	$view->with('information', $information);
 });
