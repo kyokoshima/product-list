@@ -8,7 +8,7 @@
 	<div class="modal fade" id="addInfo" role="dialog" aria-labelledby="addInfoLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				{{ Form::open(array('route' => 'admin.NWEX.information.store')) }}
+				{{ Form::open(array('route' => 'admin.NWEX.information.store', 'class' => 'edit-form')) }}
 				<div class="modal-header">
 					<button type="button" data-dismiss="modal" class="close">
 						<span aria-hidden="true">&times;</span>
@@ -17,10 +17,11 @@
 					<h4 class="modal-title" id="addInfoLabel">Title</h4>
 				</div>
 				<div class="modal-body">
-					{{ Form::textarea('content', null, array('style' => 'width: 100%;')) }}
+					{{ Form::textarea('content', null, array('style' => 'width: 100%;', 'class' => 'content')) }}
+					{{ Form::hidden('id', null, array('class' => 'id')) }}
 					<div class="checkbox">
 						<label for="enabled">
-							{{ Form::checkbox('enabled', true, true ) }} 有効
+							{{ Form::checkbox('enabled', true, true , array('class' => 'enabled')) }} 有効
 						</label>
 					</div>
 				</div>
@@ -48,19 +49,32 @@
 	</tr>
 	@foreach($information as $info)
 	<tr>
-		<th>{{ $info->id }}</th>
-		<th>{{ $info->content }}</th>
-		<th>{{ $info->enabled }}</th>
-		<th>
+		<td class="id">{{ $info->id }}</td>
+		<td class="content">{{ $info->content }}</td>
+		<td class="enabled">{{ $info->enabled }}</td>
+		<td>
+			<button class="btn btn-success edit" type="button" style="float: left;">
+				<span class="glyphicon glyphicon-edit rotate"></span>
+			</button>
 			{{ Form::open(['route' => ['admin.NWEX.information.destroy', $info->id], 'method' => 'delete']) }}
 			<button type="submit" class="btn btn-danger">
 				<span class="glyphicon glyphicon-remove rotate"></span>				
 			</button>
 			{{ Form::close() }}
-		</th>
+		</td>
 	</tr>
 	@endforeach
 </table>
 @endif
 </div>
+@stop
+@section('scripts')
+<script type="text/javascript">
+$('.edit').on('click', function(){
+	var id = $(this).parent().siblings('.id').html();
+	var content = $(this).parent().siblings('.content').html();
+	var enabled = $(this).parent().siblings('.enabled').html();
+	
+});
+</script>
 @stop

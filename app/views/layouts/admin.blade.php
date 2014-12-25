@@ -44,5 +44,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     {{ HTML::script('js/bootstrap.min.js') }}
     {{ HTML::script('js/app.js') }}
+    @yield('scripts')
   </body>
 </html>

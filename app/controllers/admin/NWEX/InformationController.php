@@ -27,6 +27,9 @@ class InformationController extends \BaseController {
 			return \Redirect::back()->withErrors($validator);
 		}
 
+		// お知らせは3件までにする
+		// $count = Information::where('')
+
 		$id = Input::get('id');
 		$content = Input::get('content');
 		$enabled = Input::get('enabled');

@@ -54,3 +54,8 @@ View::composer('admin.NWEX.information', function($view){
 	$information = Information::all();
 	$view->with('information', $information);
 });
+
+View::composer('NWEX.partials.information', function($view) {
+	$information = Information::where('enabled', true)->get();
+	$view->with('information', $information);
+});

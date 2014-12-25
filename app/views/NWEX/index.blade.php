@@ -24,6 +24,34 @@ TOP
 		</div>
 	</div>
 </div>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="panel panel-success">
+		<div class="panel-heading">
+			<div class="panel-title">
+				<span class="glyphicon glyphicon-th-list"></span>
+			カテゴリ</div>
+		</div>
+			<ul class="list-unstyled list-category">
+				@foreach($categories as $key => $category)
+					@if ($key > 0)
+						<li>
+							<div class="icon">
+								{{ HTML::image('img/category/' . $key . '.png') }}
+							</div>
+							<div class="name">
+								{{ $category }}
+							</div>
+							<div class="arrow">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+							</div>
+						</li>
+					@endif
+				@endforeach
+			</ul>
+		</div>
+	</div>
+</div>
 <div class="panel panel-success">
 <div class="panel-heading">
 	<div class="panel-title">おすすめ商品</div>
