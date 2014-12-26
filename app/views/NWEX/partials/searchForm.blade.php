@@ -1,12 +1,16 @@
-<div class="navbar navbar-default navbar-nwex">
+<div class="row">
 	<div class="container-fluid">
-		<form class="navbar-form" role="search">
-			<div class="form-group">
-				<input type="text" class="form-control" placeholder="検索">
-			</div>
-			<button class="btn btn-default" type="submit">
-				<span class="glyphicon glyphicon-search"></span>
-			</button>
-		</form>
+		<div class="search-form">
+			{{ Form::open(['url' => 'NWEX/search','method' => 'get'], ['class' => 'form-inline'])}}
+				<div class="input-group">
+					<input type="search" name="q" class="form-control" placeholder="商品名 コード">
+					<span class="input-group-btn">
+						<button class="btn btn-default">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</div>
+			{{ Form::close() }}
+		</div>
 	</div>
 </div>

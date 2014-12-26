@@ -3,7 +3,6 @@
 TOP
 @stop
 @section('content')
-
 @include('NWEX.partials.breadcrumb')
 @include('NWEX.partials.information', array('show' => true))
 @include('NWEX.partials.categories')

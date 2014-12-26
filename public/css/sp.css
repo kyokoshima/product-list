@@ -245,6 +245,10 @@
 	border-radius: 0;
 }
 
+.row {
+	margin: 0;
+}
+
 .row > .col-xs-12 {
 	padding: 0;
 }
@@ -309,6 +313,11 @@
 
 .list-category li a:active {
 	background-color: #3c763d;
+}
+
+.search-form {
+	max-width: 95%;
+	margin: 0 auto;
 }
 
 @media only screen and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {

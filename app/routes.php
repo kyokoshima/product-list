@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin/NWEX', 'before' => 'auth.basic.plain'], functio
 
 Route::group(['prefix' => 'NWEX'], function(){
 	Route::resource('/', 'NWEX\ProductController');
+	Route::get('search', 'NWEX\ProductController@search');
 	Route::resource('category', 'NWEX\CategoryController');
 	Route::get('legal', function(){
 		return View::make('NWEX.legal');
