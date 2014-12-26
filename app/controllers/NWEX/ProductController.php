@@ -14,7 +14,8 @@ class ProductController extends BaseController {
 		$products = Product::join('recommends', 'products.code', '=', 'recommends.product_id')
 				->orderBy('recommends.sort_order', 'asc')->take(20)->get();
 		return View::make('NWEX.index')
-			->with(array('products'=> $products, 'categories' => $categories,
+			->with(array('products'=> $products, 
+				/*'categories' => $categories, */
 				'selectedCategory' => 0));
 	}
 }
