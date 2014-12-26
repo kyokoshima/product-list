@@ -20,7 +20,7 @@ class ProductController extends BaseController {
 		}
 
 		$word = Input::get('q');
-		$wordArray = explode(' ', $word);
+		$wordArray = preg_split('/([\s,]|　)+/ ', $word);
 
 		$products = Product::where(function($query) use ($wordArray){
 			foreach($wordArray as $w) {

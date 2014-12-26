@@ -3,7 +3,8 @@
 		<div class="search-form">
 			{{ Form::open(['url' => 'NWEX/search','method' => 'get'], ['class' => 'form-inline'])}}
 				<div class="input-group">
-					<input type="search" name="q" class="form-control" placeholder="商品名 コード">
+					<input type="search" name="q" class="form-control" placeholder="商品名 コード"
+						value="{{ $keyword or '' }}">
 					<span class="input-group-btn">
 						<button class="btn btn-default">
 							<span class="glyphicon glyphicon-search"></span>
