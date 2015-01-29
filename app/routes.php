@@ -13,7 +13,8 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	// return View::make('hello');
+	return Redirect::to('NWEX');
 });
 
 Route::group(['prefix' => 'admin/NWEX', 'before' => 'auth.basic.plain'], function(){
