@@ -74,7 +74,11 @@ $('.edit').on('click', function(){
 	var id = $(this).parent().siblings('.id').html();
 	var content = $(this).parent().siblings('.content').html();
 	var enabled = $(this).parent().siblings('.enabled').html();
-	
+	$('.edit-form .id').val(id);
+	$('.edit-form .content').val(content);
+	$('.edit-form .enabled').val(enabled);
+	$('#addInfo').modal('show');
+
 });
 </script>
 @stop
