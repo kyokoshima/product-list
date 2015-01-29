@@ -24,11 +24,13 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
+$env = $app->detectEnvironment(function(){
+	if (getenv('LARAVEL_ENV')) {
+		return getenv('LARAVEL_ENV');
+	}
 
-	'local' => array('homestead'),
-
-));
+	return 'local';
+});
 
 /*
 |--------------------------------------------------------------------------
