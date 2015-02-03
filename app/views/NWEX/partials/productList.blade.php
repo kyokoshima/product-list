@@ -21,10 +21,18 @@
 						@endif
 					</p>
 					<div class="cart-panel">
-						
+						<?php
+							$cart_product_name = $product->name;
+							if (!empty($product->volume)) {
+								$cart_product_name .= $product->volume;
+							}
+							if (!empty($product->notice)) {
+								$cart_product_name .= "(" . $product->notice . ")";
+							}
+						?>
 						<form action="http://www.projectk.co.jp/nw/cart/" method="post" accept-charset="Shift_JIS">
 							<input type="hidden" name="product_code" value="{{$product->code}}">
-							<input type="hidden" name="product_name" value="{{ $product->name }}">
+							<input type="hidden" name="product_name" value="{{ $cart_product_name }}">
 							<input type="hidden" name="price" value="{{$product->price}}">
 							<input type="hidden" name="shipping_weight" value="1">
 							<input type="hidden" name="cash_on_delivery" value="0">
