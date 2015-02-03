@@ -55,18 +55,20 @@
 	<th class="col_description">説明</th>
 	<th class="col_price">価格</th>
 	<th class="col_stock">在庫</th>
+	<th class="col_sw">SW</th>
 	<th class="col_category">カテゴリ</th>
 	</tr>
 	
 </thead>
 <tbody>
 @foreach($products as $product)
+	<?php $data_href = route('admin.NWEX.product.edit', $product->id) ?>
 @if (!empty($updated) and in_array($product->code, $updated))
-	<tr class="success">
+	<tr class="success clickable" data-href="{{ $data_href }}">
 @elseif (!empty($product->deleted_at))
-	<tr class="disabled">
+	<tr class="disabled clickable" data-href="{{ $data_href }}">
 @else
-	<tr>
+	<tr class="clickable" data-href="{{ $data_href }}">
 @endif
 		<td class="col_id">{{ $product->id }}</td>
 		<td class="col_code">{{ $product->code }}</td>
@@ -79,6 +81,7 @@
 		</td>
 		<td class="col_price">{{ $product->price }}</td>
 		<td class="col_stock">{{ $product->stock }}</td>
+		<td class="col_sw">{{ $product->shipping_weight }}</td>
 		<td class="col_category"><div>{{ $product->category->name_ja }}</div></td>
 	</tr>
 @endforeach

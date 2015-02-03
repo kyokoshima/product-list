@@ -53,7 +53,7 @@
     {{ HTML::script('js/jquery-1.11.1.min.js') }}
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     {{ HTML::script('js/bootstrap.min.js') }}
-    {{ HTML::script('js/app.js') }}
+    {{ HTML::script('js/admin.js') }}
     @yield('scripts')
   </body>
 </html>

@@ -19,6 +19,9 @@ Route::get('/', function()
 
 Route::group(['prefix' => 'admin/NWEX', 'before' => 'auth.basic.plain'], function(){
 	Route::get('/', 'admin\NWEX\ProductController@index');
+	Route::get('product', array('uses' => 'admin\NWEX\ProductController@index'));
+	Route::get('product/{product}/edit', array('uses' => 'admin\NWEX\ProductController@edit', 'as' => 'admin.NWEX.product.edit'));
+	Route::put('product/{product}', array('uses' => 'admin\NWEX\ProductController@update', 'as' => 'admin.NWEX.product.update'));
 	Route::post('upload', 'admin\NWEX\ProductController@upload');
 	Route::resource('information', 'admin\NWEX\InformationController');
 	Route::post('information', ['before' => 'csrf', 'uses' => 'admin\NWEX\InformationController@store']);

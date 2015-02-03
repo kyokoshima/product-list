@@ -9,6 +9,13 @@
 	text-decoration: none;
 }
 
+.clickable:hover td {
+	background: #ecf2fa;
+	cursor: pointer;
+}
+
+
+
 .rotate:hover {
 	animation: rotate 2s;
 	animation-iteration-count: infinite;

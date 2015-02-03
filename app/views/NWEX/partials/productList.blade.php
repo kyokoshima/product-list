@@ -29,6 +29,18 @@
 							if (!empty($product->notice)) {
 								$cart_product_name .= "(" . $product->notice . ")";
 							}
+							if ($product->stock <= 0) {
+								$mark = "×";
+							} else if ($product->stock < 4) {
+								$mark = "△";
+							} else if ($product->stock < 11) {
+								$mark = "○";
+							} else if ($product->stock < 40) {
+								$mark = "◎";
+							} else {
+								$mark = "☆";	
+							}
+							$cart_product_name = "${mark} ${cart_product_name}";
 						?>
 						<form action="http://www.projectk.co.jp/nw/cart/" method="post" accept-charset="Shift_JIS">
 							<input type="hidden" name="product_code" value="{{$product->code}}">

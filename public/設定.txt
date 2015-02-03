@@ -1,0 +1,13 @@
+genkiup.com 203.189.100.221
+
+genkiup.comのWebサーバ設定
+/var/www/vhosts/genkiup.com/conf/httpd_vh_base.conf
+
+includeしている設定
+
+
+g_webmaster
+fukue_se
+
+
+/var/www/vhosts/genkiup.com/app/products/public

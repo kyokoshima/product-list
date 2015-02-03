@@ -16,6 +16,11 @@ class ProductController extends \BaseController {
 		// $this->layout->with('products', $products);
 	}
 
+
+	public function edit($id) {
+		return $id;
+	}
+
 	public function upload() {
 		$errorMessages = null;
 		$updated = array();
